@@ -53,8 +53,14 @@ nav {
 .nav-links a:hover { color: var(--white); }
 section { position: relative; z-index: 2; padding: 96px 24px; max-width: 1160px; margin: 0 auto; }
 .hero { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-top: 140px; }
-.hero-symbol { width: 88px; height: 88px; margin-bottom: 30px; opacity: 0.86; }
-.logo-mark { width: 100%; height: 100%; display: block; filter: drop-shadow(0 0 22px rgba(232,232,240,0.12)); }
+.hero-symbol { width: 108px; height: 108px; margin-bottom: 30px; opacity: 0.9; position: relative; }
+.brand-orb { position: relative; width: 100%; height: 100%; border: 1.3px solid rgba(236,236,244,0.62); border-radius: 50%; box-shadow: 0 0 28px rgba(236,236,244,0.08), inset 0 0 24px rgba(144,144,224,0.04); }
+.brand-orb::before { content: ''; position: absolute; width: 34%; height: 74%; right: 17%; top: 13%; border-radius: 50%; border-right: 8px solid rgba(236,236,244,0.84); filter: drop-shadow(0 0 6px rgba(236,236,244,0.18)); }
+.brand-orb::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid rgba(236,236,244,0.22); border-left-color: transparent; border-bottom-color: transparent; transform: rotate(-18deg); }
+.brand-k { position: absolute; left: 50%; top: 50%; transform: translate(-52%, -53%); font-family: Georgia, 'Times New Roman', serif; font-size: 62px; line-height: 1; color: #f2f2f7; text-shadow: 0 0 14px rgba(236,236,244,0.18); z-index: 2; }
+.orbit-dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #ececf4; box-shadow: 0 0 10px rgba(236,236,244,0.42); right: -6px; z-index: 3; }
+.orbit-dot.dot-1 { top: 27%; opacity: 0.9; }
+.orbit-dot.dot-2 { top: 53%; opacity: 0.64; }
 .hero h1 { font-size: clamp(32px, 7vw, 66px); font-weight: 200; letter-spacing: clamp(6px, 1.4vw, 14px); text-transform: uppercase; color: var(--white); margin-bottom: 20px; }
 .hero .tagline { font-size: clamp(16px, 2vw, 22px); font-weight: 300; color: var(--silver); letter-spacing: 3px; max-width: 680px; margin-bottom: 28px; line-height: 1.8; }
 .hero .subline { color: var(--gray); max-width: 620px; font-size: 14px; letter-spacing: 1.4px; margin-bottom: 42px; }
@@ -112,6 +118,8 @@ footer { position: relative; z-index: 2; text-align: center; padding: 40px 24px;
   section { padding: 78px 18px; }
   .today-meta { flex-direction: column; gap: 8px; }
   .form-wrap { padding: 32px 18px; }
+  .hero-symbol { width: 94px; height: 94px; }
+  .brand-k { font-size: 54px; }
 }
 </style>
 </head>
@@ -131,13 +139,11 @@ footer { position: relative; z-index: 2; text-align: center; padding: 40px 24px;
 
 <section class="hero">
   <div class="hero-symbol" aria-hidden="true">
-    <svg class="logo-mark" viewBox="0 0 120 120" fill="none">
-      <circle cx="60" cy="60" r="50" stroke="#e8e8f0" stroke-width="1.4" opacity="0.72"/>
-      <path d="M86 20C68 28 58 43 58 60C58 77 68 92 86 100C76 92 70 78 70 60C70 42 76 28 86 20Z" fill="#e8e8f0" opacity="0.88"/>
-      <circle cx="102" cy="42" r="3.2" fill="#e8e8f0" opacity="0.82"/>
-      <circle cx="100" cy="74" r="3.2" fill="#e8e8f0" opacity="0.68"/>
-      <text x="60" y="73" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#f2f2f7">K</text>
-    </svg>
+    <div class="brand-orb">
+      <span class="brand-k">K</span>
+      <span class="orbit-dot dot-1"></span>
+      <span class="orbit-dot dot-2"></span>
+    </div>
   </div>
   <h1>KAIROS Signal</h1>
   <p class="tagline">Time has a signal.<br>Know when to move, wait, or let go.</p>
