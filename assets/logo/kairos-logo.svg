@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#050507"/>
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7F7FB"/>
+      <stop offset="0.52" stop-color="#D7D8E0"/>
+      <stop offset="1" stop-color="#8D8E9A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="139" stroke="#D8D9E2" stroke-width="2" opacity="0.72"/>
+  <path d="M122 171 A160 160 0 0 1 389 151" stroke="#D8D9E2" stroke-width="1.6" opacity="0.28" stroke-linecap="round"/>
+  <path d="M314 112 C348 152 365 204 360 257 C355 310 330 358 291 390 C330 318 336 197 314 112Z" fill="url(#silver)" filter="url(#glow)" opacity="0.95"/>
+  <text x="230" y="313" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="144" font-weight="700" fill="url(#silver)" filter="url(#glow)">K</text>
+  <circle cx="397" cy="209" r="7" fill="#D8D9E2" filter="url(#glow)" opacity="0.88"/>
+  <circle cx="397" cy="276" r="6" fill="#D8D9E2" filter="url(#glow)" opacity="0.62"/>
+</svg>
