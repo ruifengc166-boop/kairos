@@ -288,6 +288,80 @@ section {
 
 .today-meta > div span { color: var(--accent); }
 
+.signal-form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 24px;
+  padding: 0 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-gap: 8px;
+}
+
+.form-row label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.form-row select,
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(20,20,40,0.6);
+  border: 1px solid rgba(120,120,200,0.2);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-row select:hover,
+.form-row input:hover,
+.form-row textarea:hover {
+  border-color: rgba(120,120,200,0.4);
+}
+
+.form-row select:focus,
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-row textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-row select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none%23x101%3B%23x0A%23x20%23x20c90c0e0'%23xA%3C%2Fpath%23xBE%23xA5%23xA5%3E%23A0%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent input {
+  margin-top: 3px;
+}
+
 .email-section {
   text-align: center;
   max-width: 600px;
@@ -300,196 +374,7 @@ section {
   max-width: 480px;
   margin: 30px auto 0;
 }
-
-.email-form input {
-  flex: 1;
-  padding: 14px 20px;
-  background: rgba(20,20,40,0.6);
-  border: 1px solid rgba(120,120,200,0.2);
-  color: var(--white);
-  font-size: 14px;
-  outline: none;
-  font-family: inherit;
-}
-
-.email-form input::placeholder { color: var(--gray); }
-
-.email-form button {
-  padding: 14px 30px;
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  color: var(--black);
-  font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  font-family: inherit;
-}
-
-.email-form button:hover { opacity: 0.8; }
-
-.pricing {
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 60px 30px;
-  border: 1px solid rgba(120,120,200,0.1);
-}
-
-.pricing .price { font-size: 40px; font-weight: 200; color: var(--white); letter-spacing: 2px; }
-.pricing .price span { font-size: 16px; color: var(--gray); }
-.pricing p { margin: 16px 0 30px; color: var(--gray); font-size: 14px; }
-.pricing .cta-btn { margin-top: 10px; }
-
-footer {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 40px 24px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--gray);
-  border-top: 1px solid rgba(120,120,200,0.06);
-}
-
-@media (max-width: 700px) {
-  .signals-grid { grid-template-columns: 1fr; }
-  nav { padding: 16px 20px; }
-  .nav-links { display: none; }
-  .hero h1 { letter-spacing: 6px; }
-  .today-meta { flex-direction: column; gap: 8px; }
-  .email-form { flex-direction: column; }
-  .email-form button { width: 100%; }
-}
-</style>
-</head>
-<body>
-
-<div class="particles" id="particles"></div>
-
-<div class="moon-container"><div class="moon"></div></div>
-
-<nav>
-  <div class="nav-logo">KAIROS <span>Signal</span></div>
-  <div class="nav-links">
-    <a href="#signals">Signals</a>
-    <a href="#today">Today</a>
-    <a href="#subscribe">Subscribe</a>
-    <a href="#personal">Personal</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="hero-symbol">
-    <svg viewBox="0 0 60 60" fill="none">
-      <circle cx="30" cy="30" r="28" stroke="#9090e0" stroke-width="0.5" opacity="0.4"/>
-      <circle cx="30" cy="30" r="18" stroke="#9090e0" stroke-width="0.3" opacity="0.3"/>
-      <circle cx="30" cy="30" r="4" fill="#c0c0d0" opacity="0.6"/>
-      <path d="M30 2 C30 2 42 10 42 22 C42 30 36 36 30 38" stroke="#9090e0" stroke-width="0.4" opacity="0.5"/>
-      <path d="M30 58 C30 58 18 50 18 38 C18 30 24 24 30 22" stroke="#9090e0" stroke-width="0.4" opacity="0.5"/>
-    </svg>
-  </div>
-  <h1>KAIROS Signal</h1>
-  <p class="tagline">Time has a signal.<br>Know when to move, wait, or let go.</p>
-  <a href="#signals" class="cta-btn">Find Your Signal</a>
-</section>
-
-<section id="signals">
-  <div class="section-header">
-    <h2>Four Signals</h2>
-    <p>Choose the signal that resonates with your moment</p>
-  </div>
-  <div class="signals-grid">
-    <div class="signal-card">
-      <div class="signal-icon">
-        <svg viewBox="0 0 32 32" fill="none"><path d="M16 4C16 4 6 12 6 20C6 25 10 29 16 29C22 29 26 25 26 20C26 12 16 4 16 4Z" stroke="#c0c0d0" stroke-width="0.8" opacity="0.5"/></svg>
-      </div>
-      <h3>Love Signal</h3>
-      <p>Should you reach out? Observe who returns. The signal knows when connection is shifting.</p>
-    </div>
-    <div class="signal-card">
-      <div class="signal-icon">
-        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="8" stroke="#c0c0d0" stroke-width="0.8" opacity="0.5"/><circle cx="16" cy="16" r="2" fill="#c0c0d0" opacity="0.3"/></svg>
-      </div>
-      <h3>Luck Signal</h3>
-      <p>The door is not closed. The timing is still forming. Learn when to act and when to wait.</p>
-    </div>
-    <div class="signal-card">
-      <div class="signal-icon">
-        <svg viewBox="0 0 32 32" fill="none"><path d="M4 16L12 8L20 24L28 14" stroke="#c0c0d0" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/></svg>
-      </div>
-      <h3>Decision Signal</h3>
-      <p>Do not choose from panic. Let the signal clear. Move, stay, or begin again with clarity.</p>
-    </div>
-    <div class="signal-card">
-      <div class="signal-icon">
-        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="#c0c0d0" stroke-width="0.5" opacity="0.3"/><path d="M16 3V16L24 20" stroke="#9090e0" stroke-width="0.8" opacity="0.5"/></svg>
-      </div>
-      <h3>Today's Signal</h3>
-      <p>Daily guidance for your rhythm. A quiet signal for what today asks of you.</p>
-    </div>
-  </div>
-</section>
-
-<section id="today">
-  <div class="today-signal">
-    <div class="today-label">Today's Signal</div>
-    <blockquote>Move quietly today. Let the signal form. Not every pause is a setback.</blockquote>
-    <div class="today-meta">
-      <div>Aligns with: <span>Waiting</span></div>
-      <div>Avoids: <span>Rushing decisions</span></div>
-      <div>Energy: <span>Contemplative</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="subscribe">
-  <div class="email-section">
-    <div class="section-header">
-      <h2>Get Your Weekly Signal</h2>
-      <p>Seven days of guidance, delivered to your inbox</p>
-    </div>
-    <form class="email-form" action="https://formsubmit.co/hello@readkairos.com" method="POST">
-      <input type="hidden" name="_subject" value="KAIROS Signal — New Subscriber">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="email" name="email" placeholder="your@email.com" required>
+    <form class="email-form" onsubmit="event.preventDefault();alert('Thank you. Your signal is forming.');">
+      <input type="email" placeholder="your@email.com" required>
       <button type="submit">Subscribe</button>
     </form>
-  </div>
-</section>
-
-<section id="personal">
-  <div class="pricing">
-    <div class="section-header">
-      <h2>Personal Signal</h2>
-      <p>Your moment deserves its own reading</p>
-    </div>
-    <div class="price">$4.99 <span>Personal 3-Day Signal</span></div>
-    <p>A deeply personal timing report crafted for your specific question — delivered as a beautifully designed PDF with actionable guidance.</p>
-    <a href="#" class="cta-btn">Order Your Signal</a>
-  </div>
-</section>
-
-<footer>
-  KAIROS Signal &mdash; A symbolic timing &amp; self-reflection system<br>
-  This is not legal, medical, financial, or psychological advice.
-</footer>
-
-<script>
-(function() {
-  const container = document.getElementById('particles');
-  for (let i = 0; i < 40; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    p.style.left = Math.random() * 100 + '%';
-    p.style.animationDuration = (15 + Math.random() * 25) + 's';
-    p.style.animationDelay = -(Math.random() * 30) + 's';
-    p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
-    container.appendChild(p);
-  }
-})();
-</script>
-
-</body>
-</html>
