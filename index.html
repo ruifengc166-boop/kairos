@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KAIROS Signal</title>
-<meta name="description" content="Before you text, wait, or let go, ask your Love Signal anonymously. No email required. One question, one clean next move.">
+<meta name="description" content="Before you text, wait, or let go, ask your Love Signal. Leave your email to receive a private reply if selected. One question, one clean next move.">
 <meta property="og:title" content="KAIROS Signal">
-<meta property="og:description" content="Should you text, wait, or let go? Ask anonymously. No email required.">
+<meta property="og:description" content="Should you text, wait, or let go? Send one question and receive a private reply by email if selected.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://readkairos.com">
 <link rel="icon" type="image/png" href="/assets/logo.png">
@@ -20,12 +20,12 @@
 <nav><a class="brand" href="#"><img src="/assets/logo.png" alt="KAIROS Signal logo"><span>KAIROS Signal</span></a><div class="navlinks"><a href="#ask">Ask</a><a href="#moments">Moments</a><a href="#examples">Examples</a><a href="#trust">Trust</a></div></nav>
 <section class="hero">
   <div>
-    <div class="kicker"><span class="pulse"></span> Free anonymous readings are open this week</div>
+    <div class="kicker"><span class="pulse"></span> Free email replies are being tested this week</div>
     <h1>Before you text them, <em>ask your signal.</em></h1>
     <p class="lead">Should you reach out, wait, or finally let go?</p>
-    <p class="underlead">Write the one sentence you keep repeating in your head. KAIROS turns the moment into a clear next move — without needing your name, your story, or your email.</p>
-    <div class="trust-row"><span class="pill">Anonymous by default</span><span class="pill">No email required</span><span class="pill">No long story</span><span class="pill">Private reply optional</span></div>
-    <div class="cta-row"><a class="btn" href="#ask">Ask Anonymously</a><a class="btn secondary" href="#examples">Read a Sample</a></div>
+    <p class="underlead">Write the one sentence you keep repeating in your head. Leave your email so we can send your private Signal reply if your question is selected.</p>
+    <div class="trust-row"><span class="pill">Email required for reply</span><span class="pill">Selected replies in 24–48h</span><span class="pill">No names needed</span><span class="pill">Private by email</span></div>
+    <div class="cta-row"><a class="btn" href="#ask">Send My Question</a><a class="btn secondary" href="#examples">Read a Sample</a></div>
   </div>
   <div class="hero-card" aria-label="Example signal reading">
     <div class="card-logo"><img src="/assets/logo.png" alt="KAIROS Signal logo"></div>
@@ -59,18 +59,18 @@
   </div>
 </section>
 <section id="trust">
-  <div class="section-title"><div class="micro">Why it feels safe to ask</div><h2>You do not have to expose yourself to be understood.</h2></div>
+  <div class="section-title"><div class="micro">How replies work</div><h2>You ask once. We reply by email if selected.</h2></div>
   <div class="trust-grid">
-    <div class="trust-card"><h3>No names</h3><p>Do not include names, addresses, handles, or private identifying details.</p></div>
-    <div class="trust-card"><h3>No email required</h3><p>Ask anonymously. Leave email only if you want a private reply.</p></div>
+    <div class="trust-card"><h3>Email is required</h3><p>This is how you receive your answer during the testing stage.</p></div>
+    <div class="trust-card"><h3>Selected, not instant</h3><p>Free selected questions may receive a private reply within 24–48 hours.</p></div>
     <div class="trust-card"><h3>Clarity, not fortune-telling</h3><p>KAIROS does not predict the future. It reflects timing, patterns, and your next move.</p></div>
-    <div class="trust-card"><h3>Built for uncertainty</h3><p>Especially love, silence, waiting, anxious urgency, and difficult decisions.</p></div>
+    <div class="trust-card"><h3>No names needed</h3><p>Do not include names, handles, addresses, or private identifying details.</p></div>
   </div>
 </section>
 <section id="ask">
   <div class="ask-wrap">
-    <div class="ask-head"><h2>Ask your signal now.</h2><p>Write the one sentence you keep repeating in your mind.</p></div>
-    <div class="form-note">Free anonymous readings are open this week. Selected anonymous questions may be answered as public examples. If you want a private reply, leave your email.</div>
+    <div class="ask-head"><h2>Send your question.</h2><p>Write the one sentence you keep repeating in your mind.</p></div>
+    <div class="form-note">During this testing stage, KAIROS replies by email. Free replies are limited and selected. If selected, you may receive a private Signal reply within 24–48 hours.</div>
     <form class="signal-form" action="https://formsubmit.co/hello@readkairos.com" method="POST">
       <input type="hidden" name="_subject" value="New KAIROS Signal request"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://readkairos.com/#thanks"><input type="hidden" name="source" id="source"><input type="hidden" name="utm_source" id="utm_source"><input type="hidden" name="utm_medium" id="utm_medium"><input type="hidden" name="utm_campaign" id="utm_campaign"><input type="hidden" name="landing_url" id="landing_url"><input type="hidden" name="referrer" id="referrer">
       <div class="form-row"><label for="signalType">What is this about?</label><select id="signalType" name="signal_type" required><option value="Love">Love — should I text, wait, or let go?</option><option value="Decision">Decision — should I move, stay, or wait?</option><option value="Luck">Luck — is the window open now?</option><option value="Today">Today — what does today ask of me?</option></select></div>
@@ -78,15 +78,14 @@
       <div class="form-row"><label for="window">What timing are you asking about?</label><select id="window" name="time_window" required><option value="Today">Today</option><option value="Next 3 days">Next 3 days</option><option value="This week">This week</option></select></div>
       <div class="form-row"><label>Need a prompt?</label><div class="chips"><button class="chip" type="button" data-q="Should I text them, wait, or let go?">Should I text, wait, or let go?</button><button class="chip" type="button" data-q="They went silent. Should I reach out or wait?">They went silent.</button><button class="chip" type="button" data-q="I want to explain myself one more time. Should I?">Explain one more time?</button><button class="chip" type="button" data-q="Is this intuition or anxiety?">Intuition or anxiety?</button></div></div>
       <div class="form-row"><label for="question">Your one-sentence question</label><textarea id="question" name="question" placeholder="Example: I want to text them, but I don’t know if I’m acting from love or anxiety." required></textarea><small>One sentence is enough. Do not include names or private identifying details.</small></div>
-      <div class="form-row"><label for="anonymousUse">May this be answered anonymously as an example?</label><select id="anonymousUse" name="anonymous_example_permission" required><option value="Yes, anonymous example is okay">Yes, anonymous example is okay</option><option value="No, private only">No, private only</option></select></div>
-      <div class="form-row"><label for="email">Email — optional</label><input id="email" type="email" name="email" placeholder="Only if you want a private reply"><small>You can ask without email. If you leave your email, we may reply privately.</small></div>
+      <div class="form-row"><label for="email">Email — required for reply</label><input id="email" type="email" name="email" placeholder="Where should we send your Signal reply?" required><small>We need your email so you can actually receive the answer during this testing stage.</small></div>
       <label class="consent"><input type="checkbox" name="understanding" required><span>I understand KAIROS is a symbolic timing and self-reflection system, not legal, medical, financial, psychological, or emergency advice.</span></label>
       <button class="submit" type="submit">Send My Question</button>
     </form>
   </div>
 </section>
-<section id="thanks"><div class="thanks"><div class="micro">Signal Request</div><blockquote>Thank you. Your question has entered the signal field.</blockquote><p>If you left your email, watch your inbox. If not, check future anonymous readings.</p></div></section>
-<footer>KAIROS Signal — anonymous symbolic timing & self-reflection<br>This is not legal, medical, financial, psychological, or emergency advice.</footer>
+<section id="thanks"><div class="thanks"><div class="micro">Signal Request</div><blockquote>Thank you. Your question has entered the signal field.</blockquote><p>If your question is selected, we may send a private Signal reply to your email within 24–48 hours.</p></div></section>
+<footer>KAIROS Signal — symbolic timing & self-reflection by email during testing<br>This is not legal, medical, financial, psychological, or emergency advice.</footer>
 <script>(function(){const stars=document.getElementById('stars');if(stars){for(let i=0;i<58;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.animationDuration=16+Math.random()*26+'s';s.style.animationDelay=-(Math.random()*28)+'s';s.style.width=s.style.height=1+Math.random()*2+'px';stars.appendChild(s)}}const params=new URLSearchParams(window.location.search);const setValue=(id,value)=>{const field=document.getElementById(id);if(field)field.value=value||''};setValue('source',params.get('src'));setValue('utm_source',params.get('utm_source'));setValue('utm_medium',params.get('utm_medium'));setValue('utm_campaign',params.get('utm_campaign'));setValue('landing_url',window.location.href);setValue('referrer',document.referrer);const signalSelect=document.getElementById('signalType');const feelingSelect=document.getElementById('feeling');const question=document.getElementById('question');const urlSignal=params.get('signal');if(signalSelect&&urlSignal){const normalized=urlSignal.charAt(0).toUpperCase()+urlSignal.slice(1).toLowerCase();[...signalSelect.options].forEach(o=>{if(o.value===normalized)signalSelect.value=normalized})}function goAsk(){document.getElementById('ask').scrollIntoView({behavior:'smooth'});setTimeout(()=>question&&question.focus(),520)}document.querySelectorAll('.moment').forEach(card=>{card.addEventListener('click',()=>{if(signalSelect)signalSelect.value=card.dataset.signal||'Love';if(feelingSelect)feelingSelect.value=card.dataset.feeling||feelingSelect.value;if(question)question.value=card.dataset.question||question.value;goAsk()})});document.querySelectorAll('.chip').forEach(chip=>{chip.addEventListener('click',()=>{if(question)question.value=chip.dataset.q||'';goAsk()})})})();</script>
 </body>
 </html>
