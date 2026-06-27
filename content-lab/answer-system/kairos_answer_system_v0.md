@@ -1,10 +1,11 @@
-# KAIROS Answer System V0
+# KAIROS Answer System V0.2
 
 This document defines the early testing-stage reply system for KAIROS Signal.
 
 Current product mode:
-- Users submit one question through the website.
+- Users submit a question through the website.
 - Email is required so KAIROS can send the reply.
+- The form collects minimum necessary context, not astrology or birth-chart data.
 - Free replies are limited and selected.
 - If selected, reply within 24–48 hours.
 - No instant AI answer on the website during the testing stage.
@@ -18,18 +19,20 @@ KAIROS is a symbolic timing and self-reflection system.
 
 It does not predict the future.
 It does not claim to know another person’s thoughts.
+It does not use birthday, zodiac, tarot, astrology, numerology, or birth-chart claims.
 It does not provide legal, medical, financial, psychological, or emergency advice.
 
-It helps the user read:
-- emotional patterns
-- timing windows
-- fear versus clarity
-- waiting versus acting
-- reach / wait / let go / prepare / ask clearly
+KAIROS reads the current timing through:
+- external signal: what happened most recently
+- inner signal: what the user feels most strongly
+- intended action: what the user is considering doing
+- timing window: today / next 3 days / this week
+- situation context: the short background
+- user question: what they actually want answered
 
 Primary user promise:
 
-> One question. One clear next move.
+> One situation. One clean next move.
 
 ---
 
@@ -39,18 +42,77 @@ Every submitted request should include:
 
 - source
 - signal_type
-- feeling
 - time_window
+- recent_signal
+- considering_action
+- strongest_feeling
+- situation_context
 - question
 - email
 - landing_url
 - referrer
 
-Current website requires email. If no email is present, do not promise a private reply.
+These fields are the minimum viable reading context.
+
+Do not answer from `question` alone unless other fields are missing.
+Always weigh the context fields first.
 
 ---
 
-## 3. Reply Decision Labels
+## 3. Context Reading Logic
+
+Before drafting any reply, perform this internal analysis:
+
+1. What type of signal is this?
+   - Love
+   - Decision
+   - Luck
+   - Today
+
+2. What happened most recently?
+   - silence
+   - cold reply
+   - desire to text
+   - desire to explain
+   - decision pressure
+   - opportunity appeared
+   - stuckness
+   - other
+
+3. What action is the user considering?
+   - text
+   - wait
+   - let go
+   - explain
+   - ask clearly
+   - take opportunity
+   - do nothing today
+   - other
+
+4. What is the strongest feeling?
+   - anxiety
+   - hope
+   - fear
+   - guilt
+   - confusion
+   - pressure
+   - calm
+   - other
+
+5. What is the timing window?
+   - today
+   - next 3 days
+   - this week
+
+6. Is the intended action coming from clarity or emotional pressure?
+
+7. What is the cleanest next move?
+
+Only after this analysis choose a Signal Label.
+
+---
+
+## 4. Reply Decision Labels
 
 Use one primary signal label:
 
@@ -69,7 +131,7 @@ Avoid saying “they will come back,” “they love you,” “this will happen
 
 ---
 
-## 4. Universal Reply Format
+## 5. Universal Reply Format
 
 Email subject:
 
@@ -79,6 +141,9 @@ Email body:
 
 Hi,
 
+Your situation:
+[one-sentence summary of situation_context]
+
 Your question:
 “[cleaned user question]”
 
@@ -86,7 +151,7 @@ KAIROS Signal:
 [Reach / Wait / Let go / Prepare / Ask clearly / Pause]
 
 What the signal suggests:
-[2–4 concise lines. Reflect the emotional timing. Do not over-explain.]
+[2–4 concise lines. Reflect the recent signal, strongest feeling, and timing window. Do not over-explain.]
 
 Best move:
 [One concrete next action for the selected time window.]
@@ -103,7 +168,7 @@ Note: This is symbolic timing and self-reflection, not legal, medical, financial
 
 ---
 
-## 5. Master AI Drafting Prompt
+## 6. Master AI Drafting Prompt
 
 Use this prompt to draft every reply.
 
@@ -114,6 +179,7 @@ Your job is to help the user find a cleaner next move in an emotionally unclear 
 
 You do not predict the future.
 You do not claim to know another person’s thoughts or hidden intentions.
+You do not use birthday, zodiac, astrology, tarot, numerology, or birth-chart claims.
 You do not give legal, medical, financial, psychological, or emergency advice.
 You do not encourage chasing, manipulation, stalking, pressure, or self-abandonment.
 
@@ -129,18 +195,32 @@ Tone:
 
 Use the user’s submitted fields:
 signal_type: {{signal_type}}
-feeling: {{feeling}}
 time_window: {{time_window}}
+recent_signal: {{recent_signal}}
+considering_action: {{considering_action}}
+strongest_feeling: {{strongest_feeling}}
+situation_context: {{situation_context}}
 question: {{question}}
 
-First classify the request into one of these patterns:
+Do not answer from the question alone.
+First read the context:
+1. recent external signal
+2. intended action
+3. strongest emotion
+4. timing window
+5. situation context
+6. actual question
+
+Classify the request into one of these patterns:
 - love_text_or_wait
 - love_silence_no_contact
 - love_explain_again
 - love_intuition_vs_anxiety
 - love_let_go
 - decision_move_stay_wait
+- decision_missing_information
 - luck_opportunity_timing
+- luck_forcing_the_window
 - today_energy
 - unsafe_or_out_of_scope
 - too_vague
@@ -154,6 +234,9 @@ Subject: Your KAIROS Signal — [Signal Label]
 
 Hi,
 
+Your situation:
+[one-sentence summary]
+
 Your question:
 “[cleaned question]”
 
@@ -161,7 +244,7 @@ KAIROS Signal:
 [Signal Label]
 
 What the signal suggests:
-[2–4 short lines. No prediction. No certainty about the other person.]
+[2–4 short lines. No prediction. No certainty about the other person. Reference the recent signal, emotion, and timing window.]
 
 Best move:
 [One concrete action matched to the time window.]
@@ -179,64 +262,214 @@ Note: This is symbolic timing and self-reflection, not legal, medical, financial
 
 ---
 
-## 6. Love Signal — Text / Wait / Let Go
+## 7. Field Weighting by Signal Type
 
-### Needed information
+### Love Signal
 
-The website may only collect one sentence, but when reviewing the request, try to infer:
+Priority order:
+1. recent_signal
+2. considering_action
+3. strongest_feeling
+4. situation_context
+5. time_window
+6. question
 
-- Is the user acting from anxiety, clarity, guilt, fear, or care?
-- Is there silence, delay, conflict, or ambiguity?
-- Does the user want contact to connect or to reduce anxiety?
-- Is the timing today, next 3 days, or this week?
-- Is the user chasing, over-explaining, proving, or waiting?
+Love is usually about timing, not prediction.
+Translate “do they love me?” into “what is the cleanest next move?”
 
-Do not require all details before replying. If the question is too vague, send a short follow-up request.
+Common interpretations:
 
-### Pattern prompt
+- recent_signal = They went silent + strongest_feeling = Anxiety + action = Text them
+  - likely signal: Wait / Do not act today
+
+- recent_signal = I want to explain myself + strongest_feeling = Guilt + action = Explain myself
+  - likely signal: Wait / Stop explaining / Ask clearly only if calm
+
+- strongest_feeling = Calm + action = Ask clearly + situation shows unresolved confusion
+  - likely signal: Ask clearly
+
+- repeated self-abandonment / harmful pattern / loss of dignity
+  - likely signal: Let go / Safety boundary
+
+### Decision Signal
+
+Priority order:
+1. situation_context
+2. considering_action
+3. time_window
+4. strongest_feeling
+5. recent_signal
+6. question
+
+Decision replies should focus on:
+- whether the user has enough information
+- whether pressure is driving the choice
+- whether delay is possible
+- whether action is reversible
+
+If a professional domain is involved, do not give professional advice.
+Give a self-reflection timing answer and recommend qualified support.
+
+### Luck Signal
+
+Priority order:
+1. recent_signal
+2. situation_context
+3. considering_action
+4. time_window
+5. strongest_feeling
+6. question
+
+Luck should be translated into:
+- opportunity window
+- readiness
+- preparation
+- forced movement versus clean movement
+
+Do not promise success, money, outcome, or good luck.
+
+### Today’s Signal
+
+Priority order:
+1. strongest_feeling
+2. situation_context
+3. considering_action
+4. time_window
+5. question
+
+Keep Today replies short.
+Focus on one energy and one next action.
+
+---
+
+## 8. Love Signal Prompt
 
 ```text
 Classify this as a Love Signal request.
-The user is deciding whether to text, wait, explain, or let go.
+The user is deciding whether to text, wait, explain, ask clearly, or let go.
 
-Question: {{question}}
-Feeling: {{feeling}}
-Time window: {{time_window}}
-
-Decide whether the cleanest signal is Reach, Wait, Let go, Ask clearly, or Pause.
+Inputs:
+recent_signal: {{recent_signal}}
+considering_action: {{considering_action}}
+strongest_feeling: {{strongest_feeling}}
+time_window: {{time_window}}
+situation_context: {{situation_context}}
+question: {{question}}
 
 Do not predict the other person’s feelings.
 Do not say whether they will return.
+Do not frame the answer as fate.
 Focus on timing, emotional clarity, and the user’s next clean move.
 
-If the user is anxious, rushed, checking, chasing, or trying to stop pain, prefer Wait / Pause.
-If the user has already explained repeatedly, prefer Wait / Stop explaining.
-If the user needs a clear boundary or final clarity, prefer Ask clearly.
-If the pattern is repeatedly harmful or self-abandoning, prefer Let go.
+Decision rules:
+- If the user is anxious, rushed, checking, chasing, or trying to stop pain, prefer Wait / Do not act today.
+- If the user has already explained repeatedly, prefer Wait / Stop explaining.
+- If the user is calm and needs one clean truth, prefer Ask clearly.
+- If the pattern is repeatedly harmful or self-abandoning, prefer Let go.
+- If there are signs of coercion, stalking, harm, abuse, or crisis, use Safety boundary.
 ```
 
-### Example reply
+---
+
+## 9. Decision Signal Prompt
+
+```text
+Classify this as a Decision Signal request.
+The user is deciding whether to move, stay, wait, prepare, or ask for more clarity.
+
+Inputs:
+recent_signal: {{recent_signal}}
+considering_action: {{considering_action}}
+strongest_feeling: {{strongest_feeling}}
+time_window: {{time_window}}
+situation_context: {{situation_context}}
+question: {{question}}
+
+Do not choose their life for them.
+Do not give legal, financial, medical, or professional advice.
+Reflect decision timing.
+
+Decision rules:
+- If the choice feels rushed and information is missing, prefer Ask clearly or Wait.
+- If delay will close the window but preparation is possible, prefer Prepare.
+- If the user is calm and the risk is contained, prefer Reach / Move gently.
+- If the question involves professional stakes, give a reflective timing answer and recommend qualified advice.
+```
+
+---
+
+## 10. Luck Signal Prompt
+
+```text
+Classify this as a Luck Signal request.
+The user is asking about opportunity, timing, opening, movement, or chance.
+
+Inputs:
+recent_signal: {{recent_signal}}
+considering_action: {{considering_action}}
+strongest_feeling: {{strongest_feeling}}
+time_window: {{time_window}}
+situation_context: {{situation_context}}
+question: {{question}}
+
+Do not promise luck, success, money, or outcome.
+Translate luck into timing, readiness, preparation, and clean movement.
+
+Decision rules:
+- If the user is unprepared but the opportunity remains alive, prefer Prepare.
+- If the window feels emotionally forced or rushed, prefer Wait.
+- If the user has prepared and the risk is contained, prefer Reach / Move gently.
+```
+
+---
+
+## 11. Today’s Signal Prompt
+
+```text
+Classify this as a Today’s Signal request.
+The user is asking what today asks of them.
+
+Inputs:
+recent_signal: {{recent_signal}}
+considering_action: {{considering_action}}
+strongest_feeling: {{strongest_feeling}}
+time_window: {{time_window}}
+situation_context: {{situation_context}}
+question: {{question}}
+
+Give one simple signal for today.
+Do not over-explain.
+Do not predict external events.
+Focus on energy, restraint, action, rest, or clarity.
+```
+
+---
+
+## 12. Example Context-Based Reply
 
 Subject: Your KAIROS Signal — Wait
 
 Hi,
 
+Your situation:
+They went silent after your last exchange, and you feel anxious about whether to text first.
+
 Your question:
-“Should I text them after three days of silence?”
+“Should I text them, wait, or let go?”
 
 KAIROS Signal:
 Wait.
 
 What the signal suggests:
-The silence is already information.
-If you reach out only to reduce anxiety, the timing is not clean yet.
-Let the urge settle before you decide what the silence means.
+The recent signal is silence.
+The strongest inner signal is anxiety.
+If you text today, the move may be less about connection and more about stopping the discomfort.
 
 Best move:
-Wait 24 hours. Do not send a message from panic today.
+Wait 24 hours. Let your body settle before deciding whether a message is clean or reactive.
 
 What to avoid:
-Do not fill the silence for them just to feel chosen for a moment.
+Do not send a message just to make the uncertainty disappear.
 
 One sentence to remember:
 “An anxious message rarely creates a clear signal.”
@@ -247,177 +480,7 @@ Note: This is symbolic timing and self-reflection, not legal, medical, financial
 
 ---
 
-## 7. Decision Signal — Move / Stay / Wait
-
-### Needed information
-
-- What are the options?
-- What is the deadline?
-- Is the choice reversible?
-- What does the user lose by waiting?
-- What does the user risk by acting now?
-- Is the user calm or pressured?
-
-### Pattern prompt
-
-```text
-Classify this as a Decision Signal request.
-The user is deciding whether to move, stay, wait, or ask for more clarity.
-
-Question: {{question}}
-Feeling: {{feeling}}
-Time window: {{time_window}}
-
-Do not choose their life for them.
-Do not give legal, financial, medical, or professional advice.
-Reflect decision timing.
-
-If the choice feels rushed and reversible, prefer Wait or Ask clearly.
-If delay will close the window but the user has enough clarity, prefer Prepare or Reach.
-If the user lacks key information, prefer Ask clearly.
-If the question involves legal/financial/medical stakes, give a self-reflection response and recommend qualified advice.
-```
-
-### Example reply
-
-Subject: Your KAIROS Signal — Ask clearly
-
-Hi,
-
-Your question:
-“Should I accept this opportunity now or wait?”
-
-KAIROS Signal:
-Ask clearly.
-
-What the signal suggests:
-The timing is not closed, but it is not clean enough for a blind yes.
-You need one more concrete piece of information before your body can settle.
-
-Best move:
-Ask one direct question today. Then give yourself until tomorrow before committing.
-
-What to avoid:
-Do not say yes just because the window feels scarce.
-
-One sentence to remember:
-“Pressure is not the same as timing.”
-
-KAIROS Signal
-
----
-
-## 8. Luck Signal — Opportunity Timing
-
-### Needed information
-
-- What opportunity is the user asking about?
-- What action are they considering?
-- What preparation is missing?
-- Is the window open, early, late, or noisy?
-- Is the user trying to force movement?
-
-### Pattern prompt
-
-```text
-Classify this as a Luck Signal request.
-The user is asking about opportunity, timing, opening, movement, or chance.
-
-Question: {{question}}
-Feeling: {{feeling}}
-Time window: {{time_window}}
-
-Do not promise luck, success, money, or outcome.
-Translate luck into timing, readiness, preparation, and clean movement.
-
-If the user is unprepared but the opportunity remains alive, prefer Prepare.
-If the window seems emotionally forced or rushed, prefer Wait.
-If the user has prepared and the risk is contained, prefer Reach or Move gently.
-```
-
-### Example reply
-
-Subject: Your KAIROS Signal — Prepare
-
-Hi,
-
-Your question:
-“Is the opportunity still open?”
-
-KAIROS Signal:
-Prepare.
-
-What the signal suggests:
-The door does not feel closed, but today does not ask you to force it.
-The signal favors quiet preparation over visible movement.
-
-Best move:
-Strengthen one missing piece before you reach again.
-
-What to avoid:
-Do not rush the door just because you are afraid it will disappear.
-
-One sentence to remember:
-“The door may be open, but your move still needs to be clean.”
-
-KAIROS Signal
-
----
-
-## 9. Today’s Signal — Daily Energy
-
-### Needed information
-
-- What is the user carrying today?
-- Is today for action, rest, waiting, repair, or focus?
-- What one thing should they avoid?
-
-### Pattern prompt
-
-```text
-Classify this as a Today’s Signal request.
-The user is asking what today asks of them.
-
-Question: {{question}}
-Feeling: {{feeling}}
-Time window: {{time_window}}
-
-Give one simple signal for today.
-Do not over-explain.
-Do not predict external events.
-Focus on energy, restraint, action, rest, or clarity.
-```
-
-### Example reply
-
-Subject: Your KAIROS Signal — Move quietly
-
-Hi,
-
-Your question:
-“What should I do today?”
-
-KAIROS Signal:
-Move quietly.
-
-What the signal suggests:
-Today does not need performance.
-It asks for one clean action and less noise around it.
-
-Best move:
-Finish one thing without announcing it.
-
-What to avoid:
-Do not turn uncertainty into a public decision.
-
-One sentence to remember:
-“Quiet action is still movement.”
-
-KAIROS Signal
-
----
-
-## 10. Unsafe / Out-of-Scope Handling
+## 13. Unsafe / Out-of-Scope Handling
 
 Use this when the user mentions:
 
@@ -454,34 +517,35 @@ KAIROS Signal
 
 ---
 
-## 11. Too-Vague Follow-Up
+## 14. Too-Vague Follow-Up
 
-Use this when the user’s question is too vague to answer.
+Use this when the user’s context is too vague to answer.
 
 Template:
 
 ```text
-Subject: Your KAIROS Signal — One more sentence
+Subject: Your KAIROS Signal — One more detail
 
 Hi,
 
 Thank you for sending your question.
-I need one more sentence before the signal can be read clearly.
+I need one more detail before the signal can be read clearly.
 
 Please reply with:
-1. What you are deciding between
-2. Whether the timing is today, the next 3 days, or this week
-3. What you feel most strongly: fear, clarity, guilt, waiting, or pressure
+1. What happened most recently
+2. What you are considering doing
+3. What you feel most strongly right now
 
 KAIROS Signal
 ```
 
 ---
 
-## 12. Human Review Checklist
+## 15. Human Review Checklist
 
 Before sending any reply, check:
 
+- Did we use the context fields, not only the question?
 - Did we avoid predicting the future?
 - Did we avoid claiming to know another person’s mind?
 - Did we give one clear next move?
@@ -492,13 +556,16 @@ Before sending any reply, check:
 
 ---
 
-## 13. Early Metrics to Track
+## 16. Early Metrics to Track
 
 For every answered question, track:
 
 - source
 - signal_type
-- feeling
+- recent_signal
+- considering_action
+- strongest_feeling
+- time_window
 - question pattern
 - reply label
 - whether user replied again
