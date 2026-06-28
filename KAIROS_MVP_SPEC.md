@@ -1,53 +1,43 @@
-# KAIROS MVP Spec
+# KAIROS MVP Mainline Spec
 
 Version: MVP v0.1  
-Status: Source of truth for product, website, report, and content development.
+Status: Source of truth for product, website, report, and content development  
+Product: KAIROS Signal  
+Positioning: symbolic timing reading service for English-speaking users
 
 ## 1. One-line definition
 
-KAIROS helps people choose the right moment to act, wait, speak, rest, prepare, or let go through a symbolic timing method rooted in Eastern and Western wisdom traditions.
+KAIROS helps people choose the right moment to act, wait, speak, rest, prepare, or let go — through a symbolic timing method rooted in Eastern and Western wisdom traditions.
 
-Chinese working definition:
+KAIROS is not a love-content account, not an AI form, not generic emotional advice, and not a random fortune generator. It is a timing-reading service.
 
-KAIROS 用融合中西方象征智慧的时机判断方法，帮助英语用户在感情、事业、身心状态和重大选择中判断该行动、等待、表达、休息、准备还是放下。
+## 2. Non-negotiable mainline
 
-## 2. Non-negotiable product center
+The core of KAIROS is not simply giving advice. The core is reading timing.
 
-KAIROS is not primarily a love-advice page, an AI chatbot, a generic emotional-content account, or a random fortune generator.
-
-KAIROS is a symbolic timing reading service.
-
-The core user question is not simply:
+The user's real question is usually not only:
 
 > What should I do?
 
-The deeper question is:
+It is:
 
 > Is this the right moment to do it?
 
-Every product decision must return to timing:
+All future product decisions must stay centered on timing questions:
 
-- Is this a clean moment to act?
-- Is this a moment to wait?
-- Is this a moment to speak clearly?
-- Is this a moment to prepare first?
-- Is this a moment to rest or reset?
-- Is this a moment to let go?
-- Is this window open, blocked, unstable, or still forming?
+- Is now the moment to act?
+- Should I wait, speak, leave, begin, prepare, or rest?
+- Is this opportunity open now or not yet?
+- Is this relationship, career move, wellbeing reset, or major decision in a clean timing window?
+- What should I avoid while the moment is unstable?
 
-## 3. MVP user promise
+## 3. MVP domains
 
-When you are unsure whether to act, wait, speak, rest, prepare, or let go, KAIROS helps you read the timing.
+The first version must not be Love-only. Love can be the largest traffic entry, but it cannot define the whole product.
 
-KAIROS does not claim to predict fate. It reads timing. The purpose is not to remove the user's judgment, but to help the user see whether the moment is clean for action.
+### 3.1 Love Timing
 
-## 4. MVP areas
-
-Love is a major acquisition channel, but KAIROS must not become Love-only. MVP supports four areas.
-
-### 4.1 Love Timing
-
-User questions:
+Typical questions:
 
 - Should I text them?
 - Should I wait?
@@ -55,7 +45,7 @@ User questions:
 - Should I explain myself?
 - Is this the right moment to reach out?
 
-Signals:
+Possible signals:
 
 - Reach
 - Wait
@@ -63,9 +53,9 @@ Signals:
 - Ask clearly
 - Do not act today
 
-### 4.2 Career Timing
+### 3.2 Career Timing
 
-User questions:
+Typical questions:
 
 - Should I apply?
 - Should I quit?
@@ -73,7 +63,7 @@ User questions:
 - Should I ask for more?
 - Should I wait before making a move?
 
-Signals:
+Possible signals:
 
 - Move
 - Prepare
@@ -81,18 +71,13 @@ Signals:
 - Ask clearly
 - Avoid rushing
 
-### 4.3 Wellbeing Timing
+### 3.3 Wellbeing Timing
 
-This is not medical advice. KAIROS must not diagnose, treat, or replace professional care.
+This is not medical advice and must not diagnose symptoms, illness, or treatment.
 
-Positioning:
+The domain should be framed around energy, emotional rhythm, rest timing, reset, and personal rhythm.
 
-- energy rhythm
-- emotional weather
-- rest timing
-- personal reset
-
-User questions:
+Typical questions:
 
 - Should I slow down?
 - Should I rest or push through?
@@ -100,7 +85,7 @@ User questions:
 - Why do I feel blocked?
 - Is this a time to simplify?
 
-Signals:
+Possible signals:
 
 - Rest
 - Reset
@@ -108,9 +93,9 @@ Signals:
 - Do not force
 - Return to routine
 
-### 4.4 Decision / Luck Timing
+### 3.4 Decision / Luck Timing
 
-User questions:
+Typical questions:
 
 - Is this a good time to start?
 - Should I sign?
@@ -118,7 +103,7 @@ User questions:
 - Should I say yes?
 - Is the window open now?
 
-Signals:
+Possible signals:
 
 - Open window
 - Closed window
@@ -126,67 +111,94 @@ Signals:
 - Act within 3 days
 - Wait for a clearer signal
 
-## 5. Trust layer is mandatory
+## 4. Trust is part of the MVP
 
-KAIROS cannot ask for personal questions before establishing trust.
+A symbolic or divination-like product cannot ask users to submit vulnerable questions before trust is built.
 
 The user must first feel:
 
-> This system has a lineage, a method, and a visible ability to read timing.
+> This system has a lineage, a method, and a way of reading the moment.
 
-Trust does not come from saying "AI can analyze you." Trust comes from presenting KAIROS as a symbolic timing method rooted in Eastern and Western traditions.
+KAIROS should not build trust by saying "AI can analyze you." That makes it feel like a generic tool.
 
-Required trust elements on the website:
+The trust source is:
 
-1. A clear statement that KAIROS is a symbolic timing system.
-2. A knowledge layer explaining Eastern Timing, Western Symbolism, and the Present Moment.
-3. A method layer showing how KAIROS reads timing.
-4. Sample readings that demonstrate what a user will receive.
-5. Boundaries that avoid fake certainty and unsafe claims.
+> A symbolic timing system rooted in Eastern and Western traditions.
 
-## 6. Knowledge packaging
+The website must show:
 
-KAIROS should not dump all mystical knowledge on the user. It should extract the timing-related layer from Eastern and Western systems.
+- The knowledge basis
+- The method
+- The sample readings
+- The boundaries
+- What the user receives
 
-### 6.1 Eastern Timing Layer
+Only after this should the form appear.
 
-Useful concepts:
+## 5. Knowledge packaging
 
-- I Ching: change, retreat and advance, timing within transformation.
-- Five Elements: balance, excess, deficiency, restraint, support.
-- Seasonal rhythm: growth, fullness, decline, rest, renewal.
-- Choosing the right moment: not only whether to act, but when.
+KAIROS should not dump every mystical tradition into the product. It should extract the part needed for timing:
 
-Suggested front-end language:
+- when to act
+- when to wait
+- when to withdraw
+- when to speak
+- when to rest
+- when to begin
+- when to close a window
+
+### 5.1 Eastern Timing Layer
+
+Usable references:
+
+- I Ching: change, position, timing, advance and retreat
+- Five Elements: balance, excess, deficiency, support, and restraint
+- Seasonal rhythm: emergence, growth, fullness, decline, rest
+- Choosing the right moment: not only whether to act, but when to act
+
+Frontend language:
 
 > Eastern traditions have long treated timing as part of wisdom: when to move, when to wait, when to withdraw, and when to restore balance.
 
-### 6.2 Western Symbolic Layer
+### 5.2 Western Symbolic Layer
 
-Useful concepts:
+Usable references:
 
-- Astrology cycles: rhythm, tension, openings, relationship and action timing.
-- Lunar rhythm: beginning, growth, fullness, release.
-- Archetypes: roles, conflicts, thresholds, inner patterns.
-- Symbolic divination: reading the symbolic structure around a question.
+- Astrology cycles: rhythm, phase, pressure, relational and action timing
+- Lunar rhythm: beginning, growth, fullness, release, rest
+- Archetypes: roles, tension, patterns, inner conflicts
+- Symbolic divination: reading the symbolic structure around a question, not predicting every detail of fate
 
-Suggested front-end language:
+Frontend language:
 
-> Western esoteric systems read cycles, archetypes, lunar rhythm, and symbolic tension around a question.
+> Western esoteric systems read cycles, archetypes, and symbolic tension around a question.
 
-### 6.3 Present Moment Layer
+### 5.3 Present Moment Layer
 
-KAIROS must also read the user's real situation:
+KAIROS must combine symbolic timing with the user's concrete moment.
 
-- What happened most recently?
+Required moment inputs:
+
+- What domain is this about?
+- What happened recently?
 - What action is the user considering?
 - What feeling is loudest?
-- What time window is being asked about?
-- Which area is this about?
+- What time window are they asking about?
+- What exact question do they want answered?
 
-### 6.4 Timing Signal Layer
+Optional deeper symbolic inputs:
 
-The final output must be simple and actionable:
+- Date of birth
+- Birth time
+- Birth place
+- Current city / timezone
+- Important date involved
+
+### 5.4 Timing Signal Layer
+
+The final output must be simple and actionable, not buried in terminology.
+
+Possible signals:
 
 - Act
 - Wait
@@ -198,33 +210,37 @@ The final output must be simple and actionable:
 - Do not act today
 - Wait for a clearer window
 
-## 7. MVP user journey
+## 6. Correct MVP user flow
 
-The correct user journey is:
+The correct KAIROS flow is:
 
-1. User has a concrete uncertainty.
-2. User lands on KAIROS.
-3. User understands KAIROS is a symbolic timing system.
-4. User sees the knowledge lineage and method.
-5. User sees sample readings and understands the value.
-6. User chooses Love, Career, Wellbeing, or Decision.
-7. User gives the moment: recent signal, intended action, emotional weather, time window, question.
-8. User optionally provides birth/date/location information for deeper symbolic timing.
+1. User arrives with a real concern.
+2. User sees that KAIROS is a symbolic timing system.
+3. User sees that the method draws from Eastern and Western timing traditions.
+4. User understands that this is not a random answer or generic AI advice.
+5. User sees sample readings and understands the output.
+6. User chooses a domain: Love, Career, Wellbeing, or Decision.
+7. User submits the moment and time window.
+8. User may optionally provide birth/date/place details for deeper symbolic timing.
 9. User submits email.
 10. User receives a Personal Timing Signal.
-11. If useful, user upgrades to a paid 3-Day Signal or returns with another question.
+11. If useful, user can later purchase a fuller 3-Day Signal.
 
-The form must not be the first real experience. Method and sample readings come first.
+The wrong flow is:
 
-## 8. Website information architecture
+> User arrives -> immediately fills a form -> gets an answer.
 
-### 8.1 Hero
+That skips trust and will underperform.
 
-Primary title:
+## 7. Website information architecture
+
+### 7.1 Hero
+
+Headline:
 
 > Choose the right moment.
 
-Subtitle:
+Subheadline:
 
 > A symbolic timing reading for love, work, wellbeing, and major decisions — rooted in Eastern and Western timing traditions.
 
@@ -236,7 +252,7 @@ Secondary CTA:
 
 > See How It Works
 
-### 8.2 Trust / Knowledge Layer
+### 7.2 Trust Layer
 
 Title:
 
@@ -249,31 +265,33 @@ Core explanation:
 Cards:
 
 - Eastern Timing: change, balance, cycles, and the wisdom of acting at the right moment.
-- Western Symbolism: archetypes, lunar rhythm, planetary cycles, and symbolic tension around a question.
+- Western Symbolism: archetypes, lunar rhythm, planetary cycles, and the symbolic pattern around a question.
 - The Present Moment: what happened, what you want to do, what feeling is loudest, and when clarity is needed.
 
-### 8.3 How KAIROS Reads Timing
+### 7.3 How KAIROS Reads Timing
 
 Steps:
 
-1. Your question — what are you trying to decide?
-2. The recent signal — what changed most recently?
-3. The emotional weather — what feeling is loudest?
+1. Your question — What are you trying to decide?
+2. The recent signal — What changed most recently?
+3. The emotional weather — What feeling is loudest?
 4. The symbolic timing layer — Eastern and Western timing traditions are used to read the moment.
-5. The signal — act, wait, prepare, speak, rest, or let go.
+5. The signal — Act, wait, prepare, speak, rest, or let go.
 
-### 8.4 Areas
+### 7.4 What KAIROS Can Read
 
-Four entry points:
+Four entries:
 
-- Love Timing: Should I text, wait, explain, or let go?
-- Career Timing: Should I apply, quit, launch, ask, or wait?
-- Wellbeing Timing: Should I rest, reset, simplify, or push through?
-- Decision Timing: Is this the right time to act, say yes, move, sign, or begin?
+- Love Timing — Should I text, wait, explain, or let go?
+- Career Timing — Should I apply, quit, launch, ask, or wait?
+- Wellbeing Timing — Should I rest, reset, simplify, or push through?
+- Decision Timing — Is this the right time to act, say yes, move, sign, or begin?
 
-### 8.5 Sample Readings
+### 7.5 Sample Readings
 
-Each sample must include:
+Sample readings must show the system's ability. They are trust assets, not filler.
+
+Each sample should contain:
 
 - Question
 - What KAIROS reads
@@ -282,15 +300,22 @@ Each sample must include:
 - Best Move
 - What to Avoid
 
-Samples should cover Love, Career, Wellbeing, and Decision.
+At least four samples should exist:
 
-### 8.6 Form
+- Love
+- Career
+- Wellbeing
+- Decision
 
-Form title:
+### 7.6 Form
+
+The form should appear after trust and samples.
+
+Title:
 
 > Tell KAIROS the moment.
 
-Form explanation:
+Explanation:
 
 > To read your timing, KAIROS needs the moment — not your full life story.
 
@@ -304,7 +329,7 @@ Required fields:
 - What question do you want answered?
 - Email
 
-Optional deeper fields:
+Optional fields:
 
 - Date of birth
 - Birth time
@@ -312,13 +337,17 @@ Optional deeper fields:
 - Current city / timezone
 - Important date involved
 
-Optional field copy:
+Optional field explanation:
 
 > Optional — for a deeper symbolic timing layer. You can skip this if you only want a simple signal.
 
-### 8.7 What You Receive
+### 7.7 What You Receive
 
-Personal Timing Signal includes:
+Title:
+
+> Personal Timing Signal
+
+Contents:
 
 - Main Signal
 - Timing Window
@@ -328,13 +357,13 @@ Personal Timing Signal includes:
 - Reflection Line
 - Optional clear window
 
-## 9. Report structure
+## 8. Personal Timing Signal report structure
 
-The MVP report is short, clear, and actionable. It is not a long mystical essay.
+The MVP report should be short, clear, and actionable. It should not be a long mystical essay.
 
-### 9.1 Main Signal
+### 8.1 Main Signal
 
-One main signal:
+A simple primary signal:
 
 - Wait
 - Act
@@ -344,52 +373,86 @@ One main signal:
 - Let go
 - Do not act today
 
-### 9.2 Timing Window
+### 8.2 Timing Window
 
-Explain whether the asked time window is clean, blocked, unstable, or forming.
+Explain whether the requested time window is clean, unstable, early, closed, or open.
 
-### 9.3 What KAIROS Reads
+Examples:
 
-Use the user's recent signal, emotional weather, action intention, and symbolic timing layer.
+- Today is not clean for action.
+- The next 3 days are better for preparation than movement.
+- The window opens after the feeling becomes calmer.
+- This week supports one clear move, not repeated negotiation.
 
-### 9.4 Best Move
+### 8.3 What KAIROS Reads
 
-Give one concrete next move.
+Connect three layers:
 
-### 9.5 What to Avoid
+- recent signal
+- emotional weather
+- symbolic timing pattern
 
-Give one concrete behavior to avoid.
+This should feel method-based without overloading the user with jargon.
 
-### 9.6 Reflection Line
+### 8.4 Best Move
 
-One saveable sentence.
+Examples:
 
-### 9.7 Optional Clear Window
+- Wait 24 hours.
+- Send one clean question.
+- Prepare before asking.
+- Rest before deciding.
+- Do not act from urgency.
+- Let the window close without chasing.
 
-If appropriate, suggest a cleaner action window.
+### 8.5 What to Avoid
 
-## 10. MVP business model
+Examples:
 
-### 10.1 Free Signal
+- Do not send a paragraph tonight.
+- Do not ask for reassurance while pretending to ask for clarity.
+- Do not turn silence into proof.
+- Do not force a decision while exhausted.
 
-Includes:
+### 8.6 Reflection Line
+
+A short line that can be saved or shared.
+
+Example:
+
+> A message from urgency and a message from calm do not carry the same timing.
+
+### 8.7 Optional Clear Window
+
+Examples:
+
+- Tomorrow evening is cleaner than tonight.
+- Wait until the next morning.
+- Use the next 3 days to prepare, not to push.
+- This is a closed window for action, but an open window for reflection.
+
+## 9. MVP business model
+
+### 9.1 Free Signal
+
+Free Signal may include:
 
 - Main Signal
-- 1–2 sentence reason
+- One or two lines of explanation
 - Best Move
 
 Purpose:
 
 - Cold start
-- Real question collection
-- Demand validation
-- Trust building
+- Collect real questions
+- Validate demand
+- Build first trust loop
 
-### 10.2 Paid Personal 3-Day Signal
+### 9.2 Paid Personal 3-Day Signal
 
-Suggested starting price: $4.99.
+Suggested starting price: $4.99
 
-Includes:
+Paid report includes:
 
 - Main Signal
 - 3-Day Timing
@@ -398,17 +461,17 @@ Includes:
 - What to Avoid
 - Reflection Line
 - Clear Window
-- Optional visual card
+- Saveable visual card
 
-The MVP validates whether users will pay for personal timing judgment, not whether they like KAIROS visuals.
+The MVP test is not whether users like visual assets. The MVP test is whether users will pay for timing judgment around a real personal question.
 
-## 11. Voice and persona
+## 10. Voice and persona
 
-KAIROS persona:
+KAIROS should feel like:
 
 > The Reader of Timing
 
-Tone:
+Traits:
 
 - quiet
 - restrained
@@ -416,11 +479,11 @@ Tone:
 - ritual-like
 - not oily
 - not fear-based
-- not overpromising
+- not exaggerated
 - not cheap comfort
 - not dependency-building
 
-KAIROS does not say:
+KAIROS must not say:
 
 - I guarantee they will come back.
 - You will be lucky in three days.
@@ -428,7 +491,7 @@ KAIROS does not say:
 - This is your destiny.
 - The universe says yes.
 
-KAIROS says:
+KAIROS should say:
 
 - The timing is not clean.
 - This is a waiting signal.
@@ -437,33 +500,35 @@ KAIROS says:
 - Do not act today.
 - Prepare before moving.
 
-## 12. Safety and boundaries
+## 11. Boundaries and safety
 
-KAIROS must not claim to predict fate or replace professional judgment.
+KAIROS does not claim to predict fate. It reads timing.
 
-Required boundary copy:
+Standard boundary language:
 
 > KAIROS does not claim to predict fate. It reads timing. The purpose is not to remove your judgment, but to help you see whether the moment is clean for action.
 
-For wellbeing:
+Wellbeing must not become medical advice.
 
-> KAIROS is not medical advice. For symptoms, urgent issues, or mental health crises, seek professional care.
-
-Do not provide:
+KAIROS must not provide:
 
 - medical diagnosis
 - legal advice
 - financial investment advice
-- emergency mental health handling
+- emergency mental health intervention
 - absolute predictions
 - fear-based fate claims
-- guidance that creates dependency for major decisions
+- dependency-based decision control
 
-## 13. Social content principle
+High-risk cases should be redirected toward appropriate professional help.
 
-Social content must serve the MVP by showing how KAIROS reads timing.
+## 12. Social content mainline
 
-Suggested content mix:
+Social content should not be only emotional quotes or premium visuals.
+
+Its purpose is to show how KAIROS reads timing.
+
+Recommended content mix:
 
 - Love Timing: 50%
 - Career Timing: 20%
@@ -472,34 +537,110 @@ Suggested content mix:
 
 Content types:
 
-1. Situation reading: a specific situation plus KAIROS signal.
-2. Method demonstration: how KAIROS reads the moment.
-3. Sample report: what the user sends and receives.
-4. Trust-building knowledge: timing wisdom from symbolic traditions.
+### 12.1 Situation reading
 
-## 14. Development red lines
+Show a concrete user situation and the KAIROS signal.
 
-Every future change must pass these checks:
+Example:
 
-1. Does it still center timing judgment?
-2. Does it establish trust before asking for personal information?
-3. Does it avoid AI tool language?
-4. Does it avoid Love-only positioning?
-5. Does it show what the user will receive?
-6. Does it productize mysticism into a clear timing signal?
-7. Does it preserve safety boundaries?
+> They went silent for three days. You want to text tonight. KAIROS Signal: Wait.
 
-## 15. Current development priority
+### 12.2 Method demonstration
 
-Priority order:
+Show the method.
 
-1. Solidify this spec.
-2. Rebuild website positioning.
-3. Add trust and knowledge layer.
+Example:
+
+> KAIROS does not only ask what you want to do. It asks what feeling is driving the action.
+
+### 12.3 Sample report
+
+Show what users receive.
+
+Example:
+
+> What you send: They went silent. I want to text. What you receive: Main Signal: Wait. Best Move: Wait 24 hours.
+
+### 12.4 Trust building
+
+Show knowledge source and timing philosophy.
+
+Example:
+
+> In many timing traditions, action is not only about desire. It is about whether the moment is open, unstable, blocked, or ready.
+
+## 13. Development red lines
+
+Every future change must pass these checks.
+
+### 13.1 Does it still center timing?
+
+If a feature only gives emotional support, love advice, or generic AI answers without timing judgment, it is off-mainline.
+
+### 13.2 Does it build trust?
+
+The user must see:
+
+- knowledge source
+- method
+- sample output
+- boundaries
+
+### 13.3 Does it avoid AI-tool feeling?
+
+Avoid:
+
+- AI prompt
+- instant AI answer
+- AI girlfriend advice
+- chatbot form
+- random generator
+
+### 13.4 Does it avoid Love-only positioning?
+
+Love is an entry point, not the full product. Career, Wellbeing, and Decision must remain visible.
+
+### 13.5 Does it show what users receive?
+
+Sample readings are mandatory. Users need to know what they get before they submit.
+
+### 13.6 Does it productize mystical knowledge into timing signals?
+
+Do not pile up terminology. The final result must return to:
+
+Act / Wait / Prepare / Speak / Rest / Let go
+
+## 14. Current MVP priority
+
+Development order:
+
+1. Lock this MVP mainline.
+2. Rebuild homepage positioning.
+3. Add Trust / Knowledge layer.
 4. Add How KAIROS Reads Timing.
-5. Add four areas.
+5. Add four domain entries.
 6. Add four sample readings.
-7. Rebuild form fields.
-8. Create Personal Timing Signal report template.
+7. Rebuild form structure.
+8. Design Personal Timing Signal report template.
 9. Keep analytics and conversion tracking.
-10. Only then return to social media and traffic testing.
+10. Then test social content and traffic.
+
+Do not reverse this by over-prioritizing social assets, visual polish, or traffic before the product mainline is clear.
+
+## 15. Final definition
+
+KAIROS is:
+
+> A symbolic timing reading service.
+
+KAIROS is not:
+
+- a love-content account
+- an AI emotional advice tool
+- a generic fortune-telling page
+- a premium poster account
+- a quote account
+
+Core promise:
+
+> When you are unsure whether to act, wait, speak, rest, prepare, or let go, KAIROS helps you read the timing.
