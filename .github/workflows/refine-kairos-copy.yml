@@ -1,0 +1,47 @@
+name: Refine KAIROS copy
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  refine:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply product copy refinements
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+          repls = {
+              'Founding Reader Access</div><h1>Choose the right moment.': 'Daily Timing Field</div><h1>Choose the right moment.',
+              '<div class="micro">Eastern Timing Layer</div><strong id="easternLayerTitle">Reading hour layer…</strong><span id="easternLayerText">Today favors preparation, refinement, and measured action.</span>': '<div class="micro">Current Eastern Hour Layer</div><strong id="easternLayerTitle">Reading hour layer…</strong><span id="easternLayerText">Based on your local time. This hour suggests preparation, refinement, and measured action.</span>',
+              "$('easternLayerText').textContent='Today favors '+todayAlmanac.time.meaning+'.';": "$('easternLayerText').textContent='Based on your local time. This hour suggests '+todayAlmanac.time.meaning+'.';",
+              'Founding Reader Access is open this week.': 'Early Reader Access is now open.',
+              'Your Quick Timing Check, question time, Eastern hour, moon phase, and today’s almanac signal are carried into the form.': 'If you used Quick Timing Check, your quick signal will be carried into the form along with today’s timing field, question time, Eastern hour, and moon phase.',
+              '<option value="Career">Work</option>': '<option value="Work">Work</option>',
+              "const recentOptions={Love:['They went silent','They replied coldly','They came back','They watched but did not reply','I almost sent a long message','We just had a good conversation'],Career:[": "const recentOptions={Love:['They went silent','They replied coldly','They came back','They watched but did not reply','I almost sent a long message','We just had a good conversation'],Work:[",
+              "},Career:{'A new opportunity appeared'": "},Work:{'A new opportunity appeared'",
+              '<option value="Career">Work / Career Timing</option>': '<option value="Work">Work / Career Timing</option>',
+              '<option value="Decision">Decision / Luck Timing</option>': '<option value="Decision">Decision / Opportunity Timing</option>',
+          }
+          missing = [old for old in repls if old not in s]
+          for old, new in repls.items():
+              s = s.replace(old, new)
+          p.write_text(s)
+          Path('.github/workflows/refine-kairos-copy.yml').unlink(missing_ok=True)
+          if missing:
+              print('Missing patterns:', len(missing))
+              for item in missing:
+                  print(item[:180])
+          PY
+      - name: Commit refinements
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/refine-kairos-copy.yml
+          git diff --cached --quiet || git commit -m "Refine KAIROS homepage product language"
+          git push
